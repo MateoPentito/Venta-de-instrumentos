@@ -111,7 +111,7 @@ namespace Ventas_2024.Controllers
             {
                 using (SqlConnection conection = new SqlConnection(_contexto.Valor))
                 {
-                    using (SqlCommand cmd = new("sp_registrarUsuario", conection))
+                    using (SqlCommand cmd = new("sp_registrar", conection))
                     {
 
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -120,7 +120,7 @@ namespace Ventas_2024.Controllers
                         cmd.Parameters.Add("@Fecha_Nacimiento", SqlDbType.Date).Value = name.Fecha_Nacimiento;
                         cmd.Parameters.Add("@Correo", SqlDbType.VarChar).Value = name.Correo;
                         cmd.Parameters.Add("@Usuario", SqlDbType.VarChar).Value = name.User;
-                        cmd.Parameters.Add("@Contraseña", SqlDbType.VarChar).Value = name.Password;
+                        cmd.Parameters.Add("@Pass", SqlDbType.VarChar).Value = name.Password;
                         var token = Guid.NewGuid();
                         cmd.Parameters.Add("@Token", SqlDbType.VarChar).Value = token.ToString();
                         cmd.Parameters.Add("@Estado", SqlDbType.Bit).Value = 0;

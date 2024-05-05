@@ -61,12 +61,39 @@ namespace Ventas_2024.Controllers
         {
             return View();
         }
-
-
         public ActionResult InstrumentoViento()
         {
             return View();
         }
 
+
+        public ActionResult ProductoCuerda()
+        {
+            return View();
+        }
+        public ActionResult ProductoPercusion()
+        {
+            return View();
+        }
+
+        public ActionResult ProductoViento()
+        {
+            return View();
+        }
+
+        public ActionResult ProductoVario()
+        {
+            return View();
+        }
+        
+        public ActionResult Compra()
+        {
+            return View();
+        }
+
+        public ActionResult CompraRealizada()
+        {
+            return View();
+        }
     }
 }

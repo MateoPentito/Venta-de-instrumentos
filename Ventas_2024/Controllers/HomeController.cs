@@ -12,6 +12,10 @@ namespace Ventas_2024.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+   
+
+      
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -43,5 +47,30 @@ namespace Ventas_2024.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        //Se hace el create de los comentarios//
+
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+        //////        [HttpPost]
+        ////[ValidateAntiForgeryToken]
+        ////public async Task<IActionResult> Create([Bind("Id,Nombre,Fecha,Clave")] Usuario usuario)
+        ////{
+        ////            if(ModelState.IsValid)
+        ////{
+        ////_context.Add(usuario);
+        ////_context.SaveChangesAsync();
+        ////return RedirectToAction(nameof(Index));
+        ////}
+        ////            return View(usuario);
+        //// }
+        ////
+
+
+
     }
 }
