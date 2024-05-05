@@ -1,0 +1,181 @@
+﻿@model Producto;
+
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <form method="post">
+
+
+
+
+        <div class="accordion" id="accordionExample">
+            <h1 class="row d-flex justify-content-center align-items-center h-100">Estos son nuestros productos</h1>
+            <h2 class="text-center h1 fw-light mb-5 mx-1 mx-md-4 mt-4 fst-italic">Todas nuestras opciones al alcance de un click</h2>
+
+
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-dark p-2" style="--bs-bg-opacity:.5;">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary-emphasis">Cuerdas</strong>
+                            <h3 class="mb-0">Te invitamos a visitar el mundo de las cuerdas</h3>
+                            <div class="mb-1 text-body-secondary">19 de Enero</div>
+                            <p class="card-text mb-auto">Te invitamos a participar de nuestro evento. No te lo podes perder.</p>
+                            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                                Continuar leyendo
+                                <svg class="bi"><use xlink:href="#chevron-right" /></svg>
+                            </a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block rounded mx-auto d-block">
+                            <img width="300" height="400" src="https://i.pinimg.com/564x/0f/fd/aa/0ffdaabaf910602a3da9eca6c26a7b0c.jpg" class="img-fluid" alt="Sample image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-dark p-2" style="--bs-bg-opacity:.5;">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success-emphasis">Percusion</strong>
+                            <h3 class="mb-0">Te invitamos a visitar el mundo de la percusion</h3>
+                            <div class="mb-1 text-body-secondary">19 de Enero</div>
+                            <p class="mb-auto">Te invitamos a participar de nuestro evento. No te lo podes perder.</p>
+                            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                                Continuar leyendo
+                                <svg class="bi"><use xlink:href="#chevron-right" /></svg>
+                            </a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block rounded mx-auto d-block">
+                            <img width="300" height="400" src="https://i.pinimg.com/236x/22/32/e8/2232e809efce4055b4db29236c1a4274.jpg" class="img-fluid" alt="Sample image">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-dark p-2" style="--bs-bg-opacity:.5;">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success-emphasis">Viento</strong>
+                            <h3 class="mb-0">Te invitamos a visitar el mundo de los vientos</h3>
+                            <div class="mb-1 text-body-secondary">19 de Enero</div>
+                            <p class="mb-auto">Te invitamos a participar de nuestro evento. No te lo podes perder.</p>
+                            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                                Continuar leyendo
+                                <svg class="bi"><use xlink:href="#chevron-right" /></svg>
+                            </a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block rounded mx-auto d-block">
+                            <img width="300" height="400" src="https://i.pinimg.com/236x/cd/35/91/cd35919cb5dc6ab5b65606b9eef85069.jpg" class="img-fluid" alt="Sample image">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-dark p-2" style="--bs-bg-opacity:.5;">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-success-emphasis">Varios</strong>
+                            <h3 class="mb-0">Te invitamos a visitar el mundo de los articulos varios</h3>
+                            <div class="mb-1 text-body-secondary">19 de Enero</div>
+                            <p class="mb-auto">Te invitamos a participar de nuestro evento. No te lo podes perder.</p>
+                            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                                Continuar leyendo
+                                <svg class="bi"><use xlink:href="#chevron-right" /></svg>
+                            </a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block rounded mx-auto d-block">
+                            <img width="300" height="400" src="https://i.pinimg.com/236x/02/5e/f4/025ef42a7c8637b4890b5348916943f1.jpg" class="img-fluid" alt="Sample image">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="accordion-item" >
+                <h2 class="accordion-header">
+                    <button class="accordion-button bg-success p-2 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Masetas
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body bg-success p-2" style="--bs-bg-opacity: .5;">
+                        <strong>Estas son nuestras macetas.</strong> Presentamos las mismas con la finalidad de realizar una correcta estructura hacia nuestra planta.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-info p-2 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Tierra
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body bg-info p-2" style="--bs-bg-opacity: .5;">
+                        <strong>Esta es nuestra tierra.</strong> La planta se alimenta de ella, vive de ella, florece con de ella. Si queres tener resultados positivos, no dudes en comprar una tierra fertil.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-danger p-2 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Parafernalia
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body bg-danger p-2" style="--bs-bg-opacity:.5;">
+                        <strong>Toda nuestra parafernalia que siempre buscaste.</strong> Tenes toda la parafernalia con la que te vas a divertir a la hora de relajarte, solo o con amigos.
+                    </div>
+                </div>
+            </div>
+        </div>
+            <br />
+     
+
+<!--<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        -->
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+
+                <div>
+                    <h2 class="fst-italic"> Producto</h2>
+                    <label>Ingresar nombre del producto</label>
+                    <input type="text" asp-for="Nombre" />
+                </div>
+                <div>
+                    <h2 class="fst-italic">Precio</h2>
+                    <label>Ingresar precio del producto</label>
+                    <input type="number" asp-for="Precio" />
+                </div>
+                <div>
+                    <h2 class="fst-italic">Cantidad</h2>
+                    <label>Ingresar cantidad del producto</label>
+                    <input type="numbre" asp-for="Cantidad" />
+                </div>
+
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" asp-controller="Productos" asp-action="Index">Confirmar compra</button>
+                </div>
+            </div>   
+        
+      
+        </form>
+
+   
+
+       
+
+ 
+    <footer>
+
+    </footer>
+    </body>
+</html>
