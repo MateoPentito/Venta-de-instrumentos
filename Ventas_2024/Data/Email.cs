@@ -27,7 +27,7 @@ namespace Ventas_2024.Data
                 
                 
                 
-                "Hola! "+ correo_receptor +", para activar tu cuenta debes hacer click en el siguiente enlace: http://localhost:27019/Usuarios/Token?valor="+ token;
+                "Hola! para activar tu cuenta debes hacer click en el siguiente enlace: http://localhost:27019/Usuarios/Token?valor="+ token;
            
 
 
