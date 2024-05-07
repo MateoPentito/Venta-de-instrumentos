@@ -1,32 +1,34 @@
 ﻿@model Producto;
 
 @{
-    ViewData["Title"] = "Productos";
+    ViewData["Title"] = "Seccion de articulos";
 }
 
 <!DOCTYPE html>
 <html>
     <head>
     </head>
-    <body>
-        <form method="post">
+<body>
 
-            <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <form method="post">
+        <!--<div class="card-body bg-warning p-2 p-md-5" style="--bs-bg-opacity:.5;"> CAMBIAR COLOR DE FONDO-->
+        <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col">
-                    <div class="card">
-                    <img width="300" height="400" src="https://i.pinimg.com/564x/0f/fd/aa/0ffdaabaf910602a3da9eca6c26a7b0c.jpg" style="max-height: 30vh; object-fit:contain" class="card-img-top" alt="...">
+                <div class="card">
+                    <img width="300" height="400" src="https://i.pinimg.com/564x/95/26/e9/9526e99c7459692a6a336d2872fa8dce.jpg" class="d-block mx-auto mb-4" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">Cuerdas</h5>
                             <p class="card-text">Todo acerca de los intstrumentos de cuerda.</p>
                         </div>
                     <div class="card-footer">
-                        <a class="btn btn-danger" asp-action="ProductoCuerda" asp-controller="Productos" type="buttom">Ver productos</a>
+                        <a class="btn btn-dark" asp-action="ProductoCuerda" asp-controller="Productos" type="buttom">Ver productos</a>
                     </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img width="300" height="400" src="https://i.pinimg.com/236x/22/32/e8/2232e809efce4055b4db29236c1a4274.jpg" style="max-height: 30vh; object-fit:contain" class="card-img-top" alt="...">
+                    <img width="300" height="400" src="https://i.pinimg.com/564x/d8/7c/82/d87c822b9e18016a2b6bcb50e8e3f1ab.jpg" class="d-block mx-auto mb-4" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">Percusion</h5>
                         <p class="card-text">Todo acerca de los intstrumentos de percusion.</p>
@@ -38,7 +40,7 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img width="300" height="400" src="https://i.pinimg.com/236x/cd/35/91/cd35919cb5dc6ab5b65606b9eef85069.jpg" style="max-height: 30vh; object-fit:contain" class="card-img-top" alt="...">
+                    <img width="300" height="400" src="https://i.pinimg.com/564x/80/f2/79/80f279a9dab304d564bb2e5be0e75052.jpg" class="d-block mx-auto mb-4" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Viento</h5>
                         <p class="card-text">Todo acerca de los intstrumentos de viento.</p>
@@ -50,13 +52,13 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                    <img width="300" height="400" src="https://i.pinimg.com/236x/02/5e/f4/025ef42a7c8637b4890b5348916943f1.jpg" style="max-height: 30vh; object-fit:contain" class="card-img-top" alt="...">
+                    <img width="300" height="400" src="https://i.pinimg.com/564x/ad/fe/0a/adfe0ae742f7f42045bf573267def792.jpg" class="d-block mx-auto mb-4" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Varios</h5>
                         <p class="card-text">Todo acerca de los articulos varios.</p>
                         </div>
                     <div class="card-footer">
-                        <a class="btn btn-dark" asp-action="ProductoVario" asp-controller="Productos" type="buttom">Ver productos</a>
+                        <a class="btn btn-danger" asp-action="ProductoVario" asp-controller="Productos" type="buttom">Ver productos</a>
                     </div>
                     </div>
                 </div>
@@ -67,7 +69,7 @@
       
         </form>
 
-   
+
 
        
 
@@ -75,5 +77,6 @@
     <footer>
 
     </footer>
+
     </body>
 </html>
