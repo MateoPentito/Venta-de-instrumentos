@@ -72,13 +72,17 @@
                     <br />
                     <h3>Comparti tu experiencia</h3>
                     <br />
-                    <form class="row g-3">
+
+
+
+
+                    <form  method="post"    class="row g-3">
                         <div class="col-auto">
                             <label for="inputPassword2" class="visually-hidden">Comparti tu opinion...</label>
                             <input type="text" class="form-control" id="inputPassword2" placeholder="Comparti tu opinion...">
                         </div>
                         <div class="col-auto">
-                            <button type="submit" class="btn btn-dark mb-3">Compartir</button>
+                            <button type="submit" asp-controller="Home" asp-action="CrearComentario" class="btn btn-dark btn-lg">Compartir</button>
                         </div>
                     </form>
                 </div>

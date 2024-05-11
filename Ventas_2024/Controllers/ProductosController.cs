@@ -3,11 +3,18 @@ using Ventas_2024.Data;
 using System.Data.SqlClient;
 using Ventas_2024.Models;
 using System.Data;
+using Microsoft.AspNetCore.Authorization;
+using VentaDeInstrumentos.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+
 
 namespace Ventas_2024.Controllers
 {
-    public class ProductosController : Controller
-    {
+
+        public class ProductosController : Controller
+        {
 
 
         private readonly DbContext _contexto;
@@ -15,41 +22,14 @@ namespace Ventas_2024.Controllers
         {
             _contexto = conector;
         }
+
+
+
         public ActionResult Index()
         {
             return View();
         }
 
-
-        [HttpPost]
-        //using Ventas_2024.Models;
-        public ActionResult Index(Producto producto)
-        {
-            try
-            {
-                using (SqlConnection conectar = new(_contexto.Valor))
-                {
-                    using (SqlCommand cmd = new("sp_registrarCompra", conectar))
-                    {
-                        //using System.Data;
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("@Nombre",SqlDbType.VarChar).Value = producto.Nombre;
-                        cmd.Parameters.Add("@Precio", SqlDbType.Float).Value = producto.Precio;
-                        cmd.Parameters.Add("@cantidad", SqlDbType.Int).Value = producto.Cantidad;
-                        conectar.Open();
-                        producto.calcularPrecio(producto.Nombre, producto.Precio, producto.Cantidad);
-                        cmd.ExecuteNonQuery();
-                        conectar.Close();
-                    }
-                }
-            }
-            catch (System.Exception e)
-            {
-                ViewData["error"]=e.Message;
-                return View();
-            }
-            return View();        
-        }
 
 
         public ActionResult InstrumentoCuerdas()
@@ -85,15 +65,70 @@ namespace Ventas_2024.Controllers
         {
             return View();
         }
-        
+
+
+
+        [Authorize]
         public ActionResult Compra()
         {
             return View();
         }
 
-        public ActionResult CompraRealizada()
+
+
+
+
+        public IActionResult CompraRealizada()
         {
             return View();
+        }
+
+
+        [HttpPost]
+         public ActionResult CompraRealizada(Compra compra)
+        {
+            try
+            {
+                using (SqlConnection conectar = new(_contexto.Valor))
+                {
+                    using (SqlCommand cmd = new("sp_registrarCompra", conectar))
+                    {
+                        //using System.Data;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = compra.Nombre;
+                        cmd.Parameters.Add("@Apellido", SqlDbType.VarChar).Value = compra.Apellido;
+                        cmd.Parameters.Add("@Usuario", SqlDbType.VarChar).Value = compra.Usuario;
+                        cmd.Parameters.Add("@Correo", SqlDbType.VarChar).Value = compra.Correo;
+                        cmd.Parameters.Add("@Domicilio", SqlDbType.VarChar).Value = compra.Domicilio;
+                        cmd.Parameters.Add("@Numero", SqlDbType.Int).Value = compra.Numero;
+                        cmd.Parameters.Add("@Pais", SqlDbType.VarChar).Value = compra.Pais;
+                        cmd.Parameters.Add("@Provincia", SqlDbType.VarChar).Value = compra.Provincia;
+                        cmd.Parameters.Add("@MedioDePago", SqlDbType.VarChar).Value = compra.MedioDePago;
+                        cmd.Parameters.Add("@NombreTarjeta", SqlDbType.VarChar).Value = compra.NombreTarjeta;
+                        cmd.Parameters.Add("@NumeroTarjeta", SqlDbType.Int).Value = compra.NumeroTarjeta;
+                        cmd.Parameters.Add("@Vencimiento", SqlDbType.Int).Value = compra.Vencimiento;
+                        cmd.Parameters.Add("@CVV", SqlDbType.Int).Value = compra.CVV;
+                        conectar.Open();
+                        cmd.ExecuteNonQuery();
+                        conectar.Close();
+                    }
+                }
+                return RedirectToAction("CompraRealizada", "Productos");
+
+            }
+            catch (System.Exception e)
+            {
+                ViewData["error"] = e.Message;
+                return View();
+            }
+
+
+
+
+
+
+
+
         }
     }
 }

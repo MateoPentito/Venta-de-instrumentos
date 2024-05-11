@@ -2,6 +2,9 @@
 
 namespace Ventas_2024.Models
 {
+
+
+
     public class Producto
     {
 
