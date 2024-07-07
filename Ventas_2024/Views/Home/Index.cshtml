@@ -1,11 +1,13 @@
 ﻿@{
+
+    @model Comentario;
     ViewData["Title"] = "Home Page";
 }
 
 <!doctype html>
-<html lang="ar" >
-    <head>
-    </head>
+<html lang="ar">
+<head>
+</head>
 
 
 
@@ -18,10 +20,10 @@
                 <div class="col-lg-4">
                     <br />
                     <img width="300" height="400" src="https://i.pinimg.com/736x/15/f2/85/15f2857d46ae52688074be783b2d14ba.jpg" class="img-fluid" alt="Sample image">
-                    <br />  
+                    <br />
                     <br />
                     <h2 class="fw-normal">Instrumentos de cuerdas</h2>
-                    <p>En esta seccion se informara todo acerca del mundo de la platan de cannabis</p>
+                    <p>En esta seccion se informara todo acerca del mundo de los instrumentos de cuerdas.</p>
                     <p><a class="btn btn-danger" asp-controller="Productos" asp-action="InstrumentoCuerdas">Detalles</a></p>
                 </div>
 
@@ -31,7 +33,7 @@
                     <br />
                     <br />
                     <h2 class="fw-normal">Instrumentos de percusion</h2>
-                    <p>En esta seccion se informara todo acerca del mundo del lsd</p>
+                    <p>En esta seccion se informara todo acerca del mundo de los instrumentos de percusion.</p>
                     <p><a class="btn btn-info" asp-controller="Productos" asp-action="InstrumentoPercusion">Detalles</a></p>
                 </div>
 
@@ -41,7 +43,7 @@
                     <br />
                     <br />
                     <h2 class="fw-normal">Instrumentos de viento</h2>
-                    <p>En esta seccion se informara todo acerca del mundo de los hongos alucinogenos</p>
+                    <p>En esta seccion se informara todo acerca del mundo de los instrumentos de viento.</p>
                     <p><a class="btn btn-warning" asp-controller="Productos" asp-action="InstrumentoViento">Detalles</a></p>
                 </div>
 
@@ -49,18 +51,7 @@
 
 
 
-
-
-
-
-
-
             <hr class="featurette-divider">
-
-
-
-
-
 
 
             <br />
@@ -70,96 +61,113 @@
                     <br />
                     <p class="lead">Enterate de todas las experiencias que tuvieron nuestros usuarios con nuestros instrumentos de cuerdas</p>
                     <br />
-                    <h3>Comparti tu experiencia</h3>
+                    <h3>
+                        Tu opinion nos ayuda a crecer
+                    </h3>
                     <br />
-
-
-
-
-                    <form  method="post"    class="row g-3">
+                    <form method="post" class="row g-3">
                         <div class="col-auto">
                             <label for="inputPassword2" class="visually-hidden">Comparti tu opinion...</label>
-                            <input type="text" class="form-control" id="inputPassword2" placeholder="Comparti tu opinion...">
+                            <input type="text" asp-for="Comentarios" asp-controller="Home" placeholder="Dejanos tu opinion" class="form-control" />
+                            <br />
+                            <input type="text" asp-for="User" asp-controller="Usuario" placeholder="Ingresa tu usuario" class="form-control" />
                         </div>
                         <div class="col-auto">
-                            <button type="submit" asp-controller="Home" asp-action="CrearComentario" class="btn btn-dark btn-lg">Compartir</button>
+                            <button type="submit" asp-controller="Home" asp-action="CrearComentario" class="btn btn-dark">Compartir</button>
+                            <br />
+                            <br />
+                            <div class="col-auto">
+                                <button type="submit" asp-controller="Home" asp-action="MostrarComentario" class="btn btn-dark ">Ver comentarios</button>
+                                <br />
+                            </div>
                         </div>
                     </form>
                 </div>
                 <div class="col-md-5">
                     <img width="300" height="400" src="https://i.pinimg.com/564x/d0/05/55/d005552efb76431daf0bcf97a36e5703.jpg" class="img-fluid" alt="marciano">
-
                 </div>
             </div>
             <br />
+            <br />
+
+
             <hr class="featurette-divider">
-    
+
             <div class="row featurette">
                 <div class="col-md-7 order-md-2">
-              
+
                     <h2 class="featurette-heading fw-normal lh-1">Experiencias con instrumentos de percusion<span class="text-body-secondary"></span></h2>
                     <br />
                     <p class="lead">Enterate de todas las experiencias que tuvieron nuestros usuarios con nuestros instrumentos de percusion</p>
                     <br />
-                    <h3>Comparti tu experiencia</h3>
+                    <h3>Tu opinion nos ayuda a crecer</h3>
                     <br />
-                    <form class="row g-3">
+                    <form method="post" class="row g-3">
                         <div class="col-auto">
                             <label for="inputPassword2" class="visually-hidden">Comparti tu opinion...</label>
-                            <input type="text" class="form-control" id="inputPassword2" placeholder="Comparti tu opinion...">
+                            <input type="text" asp-for="Comentarios" asp-controller="Home" placeholder="Dejanos tu opinion" class="form-control" />
+                            <br />
+                            <input type="text" asp-for="User" asp-controller="Usuario" placeholder="Ingresa tu usuario" class="form-control" />
                         </div>
                         <div class="col-auto">
-                            <button type="submit" class="btn btn-dark mb-3">Compartir</button>
+                            <button type="submit" asp-controller="Home" asp-action="CrearComentario" class="btn btn-dark">Compartir</button>
+                            <br />
+                            <br />
+                            <div class="col-auto">
+                                <button type="submit" asp-controller="Home" asp-action="MostrarComentario" class="btn btn-dark ">Ver comentarios</button>
+                                <br />
+                            </div>
                         </div>
                     </form>
                 </div>
                 <div class="col-md-5 order-md-1">
                     <img width="300" height="400" src="https://i.pinimg.com/564x/30/8d/10/308d100aea07e5bfe1daf26441c42d2e.jpg" class="img-fluid" alt="Sample image">
-                    <br />
                 </div>
             </div>
             <br />
+            <br />
+            
             <hr class="featurette-divider">
+            
             <br />
             <div class="row featurette">
                 <div class="col-md-7">
-             
                     <h2 class="featurette-heading fw-normal lh-1">Experiencias con con instrumentos de viento <span class="text-body-secondary"></span></h2>
                     <br />
                     <p class="lead">Enterate de todas las experiencias que tuvieron nuestros usuarios con nuestros instrumentos de viento</p>
                     <br />
-                    <h3>Comparti tu experiencia</h3>
+                    <h3>Tu opinion nos ayuda a crecer</h3>
                     <br />
-                    <form class="row g-3">
+                    <form method="post" class="row g-3">
                         <div class="col-auto">
                             <label for="inputPassword2" class="visually-hidden">Comparti tu opinion...</label>
-                            <input type="text" class="form-control" id="inputPassword2" placeholder="Comparti tu opinion...">
+                            <input type="text" asp-for="Comentarios" asp-controller="Home" placeholder="Dejanos tu opinion" class="form-control" />
+                            <br />
+                            <input type="text" asp-for="User" asp-controller="Usuario" placeholder="Ingresa tu usuario" class="form-control" />
                         </div>
                         <div class="col-auto">
-                            <button type="submit" class="btn btn-dark mb-3">Compartir</button>
+                            <button type="submit" asp-controller="Home" asp-action="CrearComentario" class="btn btn-dark">Compartir</button>
+                            <br />
+                            <br />
+                            <div class="col-auto">
+                                <button type="submit" asp-controller="Home" asp-action="MostrarComentario" class="btn btn-dark ">Ver comentarios</button>
+                                <br />
+                            </div>
                         </div>
                     </form>
-                
-                
                 </div>
                 <div class="col-md-5">
                     <img width="300" height="400" src="https://i.pinimg.com/564x/78/e2/64/78e2645ce8e233ea56c94eacfed1658a.jpg" class="img-fluid" alt="Sample image">
-                    <br />
                 </div>
-                
             </div>
-
-
+            <br />
+            <br />
 
             <hr class="featurette-divider">
-
-
         </div>
-
-
     </main>
-    
-    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
 
 </body>
 </html>

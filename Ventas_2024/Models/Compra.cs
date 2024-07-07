@@ -32,6 +32,12 @@ namespace VentaDeInstrumentos.Models
         public int Vencimiento { get; set; }
         [Required]
         public int CVV{ get; set; }
+        
+        [Required]
+        public string? NombreProducto { get; set; }
+        [Required]
+        public int PrecioProducto{ get; set; }
+      
 
 
 

@@ -60,12 +60,13 @@ namespace Ventas_2024.Controllers
                                 ClaimsIdentity ci = new(c, CookieAuthenticationDefaults.AuthenticationScheme);
                                 AuthenticationProperties p = new();
 
+                                //Mantiene activa la sesion durante...
                                 p.AllowRefresh = true;
                                 p.IsPersistent = usuario.MantenerActivo;
 
                                 if (!usuario.MantenerActivo)
                                 {
-                                    p.ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(1);
+                                    p.ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(100);
                                 }
                                 else
                                 {
@@ -76,7 +77,9 @@ namespace Ventas_2024.Controllers
                             }
                             else
                             {
-                                ViewBag.Error = "Credenciales incorrectas o cuenta no registrada.";
+                                //COMPLETAR
+                                //Falta arreglar que se muestre este mensaje
+                                ViewData["mensaje"] = "Credenciales incorrectas o cuenta no registrada.";
                             }
                             conection.Close();
                         }
@@ -104,6 +107,7 @@ namespace Ventas_2024.Controllers
             return View();
         }
 
+        //Registra el usuario en la DB
         [HttpPost]
         public ActionResult Registrarse(Usuario name)
         {
@@ -144,13 +148,14 @@ namespace Ventas_2024.Controllers
             catch (System.Exception e)
             {
                 ViewData["error"] = e.Message;
+
                 return View();
             }
 
 
         }
 
-
+        //Registra el token?
         public ActionResult Token()
         {
             string token = Request.Query["valor"];
@@ -184,6 +189,7 @@ namespace Ventas_2024.Controllers
             {
                 Email correo = new();
                 ViewData["mensaje"] = "Verifique su correo para activar su cuenta"; 
+
                 return View();
             }
         }

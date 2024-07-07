@@ -1,0 +1,48 @@
+﻿@using System.Data;
+@* model en minuscula permite poner codigo c# en html *@
+@model DataTable
+
+
+<body class="py-4">
+    <div class="col-lg-8 mx-auto p-4 py-md-5">
+        <h1 class="text-body-emphasis">Comentarios de nuestros clientes</h1>
+      
+        <div class="mb-5">
+            <a class="btn btn-warning" asp-controller="Home" asp-action="Index">Volver al inicio</a>
+        </div>
+
+        <hr class="col-3 col-md-2 mb-5">
+
+
+        <main>
+            <div class="container">
+
+                <h2 class="mt-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Algunos comentarios de nuestros clientes</font></font></h2>
+                <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gracias a toda la confianza de nuestros clientes podemos creecer en el mercado.</font></font></p>
+
+                <div class="row mb-3 text-center">
+                    <div class="col-4 themed-grid-col"><span style="font-size: 25px; font-weight: bold;">Nombre de usuario</span></div>
+                    <div class="col-4 themed-grid-col"><span style="font-size: 25px; font-weight: bold;">Comentarios</span></div>
+
+                </div>
+                @foreach (DataRow r in Model.Rows)
+                {
+                    <div class="row mb-3 text-center">
+                        <div class="col-sm-4 themed-grid-col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@Convert.ToString(r["Usuario"])</font></font></div>
+                        <div class="col-sm-4 themed-grid-col"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@Convert.ToString(r["Comentario"])</font></font></div>
+                    </div>
+
+                }
+                <div />
+         <main />
+                <div />
+                <br />
+
+
+
+
+            
+</body>
+
+
+

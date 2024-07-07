@@ -13,10 +13,10 @@ using System.Security.Claims;
 namespace Ventas_2024.Controllers
 {
 
-        public class ProductosController : Controller
-        {
+    public class ProductosController : Controller
+    {
 
-
+        //Instancia de solo lectura 
         private readonly DbContext _contexto;
         public ProductosController(DbContext conector)
         {
@@ -83,9 +83,9 @@ namespace Ventas_2024.Controllers
             return View();
         }
 
-
+        //Este metodo registra la compra en la DB
         [HttpPost]
-         public ActionResult CompraRealizada(Compra compra)
+        public ActionResult CompraRealizada(Compra compra)
         {
             try
             {
@@ -97,6 +97,10 @@ namespace Ventas_2024.Controllers
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = compra.Nombre;
                         cmd.Parameters.Add("@Apellido", SqlDbType.VarChar).Value = compra.Apellido;
+
+                        cmd.Parameters.Add("@NombreProducto", SqlDbType.VarChar).Value = compra.NombreProducto;
+                        cmd.Parameters.Add("@PrecioProducto", SqlDbType.Int).Value = compra.PrecioProducto;
+
                         cmd.Parameters.Add("@Usuario", SqlDbType.VarChar).Value = compra.Usuario;
                         cmd.Parameters.Add("@Correo", SqlDbType.VarChar).Value = compra.Correo;
                         cmd.Parameters.Add("@Domicilio", SqlDbType.VarChar).Value = compra.Domicilio;
@@ -113,7 +117,7 @@ namespace Ventas_2024.Controllers
                         conectar.Close();
                     }
                 }
-                return RedirectToAction("CompraRealizada", "Productos");
+                return RedirectToAction("Compra", "Productos");
 
             }
             catch (System.Exception e)
@@ -122,13 +126,35 @@ namespace Ventas_2024.Controllers
                 return View();
             }
 
+        }
 
+        //Este metodo muestra la compra de la DB
+        public ActionResult mostrarCompra()
+        {
+            try
+            {
 
+                #region Obtener DataTable de SQL Server de la compra
 
+                string cadena = "server= mateo\\SQLEXPRESS;database=VentaDeInstrumentos;integrated security=true;";
+                SqlConnection con = new SqlConnection(cadena);
+                string sentencia = "SELECT Usuario,Correo,NombreProducto,PrecioProducto,MedioDePago FROM Compra";
+                SqlDataAdapter da = new SqlDataAdapter(sentencia, con);
 
+                //Contenedor de result set (Resultado del SQL)
+                DataTable dt = new DataTable();
 
+                da.Fill(dt);
+                //LA VISTA MOSTRAR COMENTARIOS VA A RECIBIR EL DATA TABLE
+                #endregion
+                return View("CompraRealizada", dt);
 
-
+            }
+            catch (Exception e)
+            {
+                ViewData["error"] = e.Message;
+                return View();
+            }
         }
     }
 }

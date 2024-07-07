@@ -1,5 +1,4 @@
 ﻿@model Compra;
-
 <h1>@ViewData["COMPRA"]</h1>
 
 
@@ -31,7 +30,7 @@
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="firstName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre</font></font></label>
-                            <input type="text" id="firstName" asp-for="Nombre" class="form-control" />
+                            <input type="text" id="firstName" asp-for="Nombre" asp-controller="Productos" class="form-control" />
 
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
@@ -44,7 +43,7 @@
 
                         <div class="col-sm-6">
                             <label for="lastName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apellido</font></font></label>
-                            <input type="text" id="lastName" asp-for="Apellido" class="form-control" />
+                            <input type="text" id="lastName" asp-for="Apellido" asp-controller="Productos"  class="form-control" />
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">
@@ -53,12 +52,43 @@
                                 </font>
                             </div>
                         </div>
+                        
+                        <div class="row g-3">
+                        <div class="col-sm-6">
+                        <label for="firstName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Producto</font></font></label>
+                        <input type="text" id="firstName" asp-for="NombreProducto" asp-controller="Productos" class="form-control" />
+
+                        <div class="invalid-feedback">
+                        <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                        Se requiere un nombre válido.
+                        </font>
+                        </font>
+                        </div>
+                        </div>
+
+
+
+
+                        <div class="col-sm-6">
+                                <label for="firstName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Precio del producto</font></font></label>
+
+                                <input type="text" id="lastName" asp-for="PrecioProducto" asp-controller="Productos" class="form-control" />
+                        <div class="invalid-feedback">
+                        <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                        Se requiere un apellido válido.
+                        </font>
+                        </font>
+                        </div>
+                        </div>
+                       
 
                         <div class="col-12">
                             <label for="username" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre de usuario</font></font></label>
                             <div class="input-group has-validation">
                                 <span class="input-group-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></span>
-                                <input type="text" asp-for="Usuario" id="cc-name" class="form-control" />
+                                <input type="text" asp-for="Usuario" asp-controller="Productos" id="cc-name" class="form-control" />
                                 <div class="invalid-feedback">
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">
@@ -70,8 +100,8 @@
                         </div>
 
                         <div class="col-12">
-                            <label for="email" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email </font></font><span class="text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></span></label>
-                            <input type="email" id="email" asp-for="Correo" class="form-control" />
+                            <label for="email" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Correo </font></font><span class="text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></span></label>
+                            <input type="email" id="email" asp-for="Correo" asp-controller="Productos" class="form-control" />
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">
@@ -83,7 +113,7 @@
 
                         <div class="col-sm-6">
                             <label for="firstName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Domicilio</font></font></label>
-                            <input type="text" asp-for="Domicilio" id="Direccion" class="form-control" />
+                            <input type="text" asp-for="Domicilio" asp-controller="Productos" id="Direccion" class="form-control" />
 
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
@@ -97,7 +127,7 @@
 
                         <div class="col-sm-6">
                             <label for="firstName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Numero</font></font></label>
-                            <input type="text" asp-for="Numero" id="Numero" class="form-control" />
+                            <input type="text" asp-for="Numero" asp-controller="Productos" id="Numero" class="form-control" />
 
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
@@ -112,7 +142,7 @@
                         <div class="col-sm-6">
                             <label for="firstName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pais</font></font></label>
 
-                            <input type="text" asp-for="Pais" id="Pais" class="form-control" />
+                            <input type="text" asp-for="Pais" asp-controller="Productos" id="Pais" class="form-control" />
 
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
@@ -123,24 +153,12 @@
                             </div>
                         </div>
 
-                        
-                        @*
-                         <div class="col-md-6">
-                        <label for="country" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">País</font></font></label>
-                        <select class="form-select" id="country" required="">
-                                <option value="Pais"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Elegir...</font></font></option>
-                                <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Argentina</font></font></option>
-                        </select>
-                        <div class="invalid-feedback"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                        Seleccione un país válido.
-                        </font></font></div>
-                        </div>
-                        *@
+
 
 
                         <div class="col-sm-6">
                             <label for="firstName" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Provincia</font></font></label>
-                            <input type="text" asp-for="Provincia" id="Provincia" class="form-control" />
+                            <input type="text" asp-for="Provincia" asp-controller="Productos" id="Provincia" class="form-control" />
 
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
@@ -152,41 +170,7 @@
                         </div>
 
                         
-                        @*
-                        <div class="col-md-6">
-                        <label for="state" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Provincia</font></font></label>
-                        <select class="form-select" id="state" required="">
-                        <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Elegir...</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Buenos Aires</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Buenos Aires Capital Federal</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Catamarca</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chaco</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chubut</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Córdoba</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Corrientes</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Entre Ríos</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Formosa</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jujuy</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">La Pampa</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">La Rioja</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mendoza</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Misiones</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Neuquen</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Río Negro</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Salta</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">San Juan</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">San Luís</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Santa Cruz</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Santa Fe</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Santiago del Estero</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tucumán</font></font></option>
-                        <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tierra del Fuego</font></font></option>
 
-                        </select>
-                        <div class="invalid-feedback"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                        Proporcione un estado válido.
-                        </font></font></div>
-                        </div> *@
 
 
                     </div>
@@ -195,27 +179,13 @@
 
                     <h4 class="mb-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pago</font></font></h4>
 
-                    @*           <div class="my-3">
-                    <div class="form-check">
-                    <input id="credit" name="paymentMethod" type="radio"  checked="" required="">
-                    <label class="form-check-label" for="credit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tarjeta de crédito</font></font></label>
-                    </div>
-                    <div class="form-check">
-                    <input id="debit" name="paymentMethod" type="radio"  required="">
-                    <label class="form-check-label" for="debit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tarjeta de débito</font></font></label>
-                    </div>
-                    <div class="form-check">
-                    <input id="paypal" name="paymentMethod" type="radio"  required="">
-                    <label class="form-check-label" for="paypal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mercado Pago</font></font></label>
-                    </div>
-                    </div> *@
 
 
                     <div class="col-12">
                         <label for="username" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Medio de pago</font></font></label>
                         <div class="input-group has-validation">
                             <span class="input-group-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font></span>
-                            <input type="text" asp-for="MedioDePago" id="Provincia" class="form-control" />
+                            <input type="text" asp-for="MedioDePago" asp-controller="Productos" id="Provincia" class="form-control" />
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">
@@ -229,21 +199,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
                     <div class="row gy-3">
                         <div class="col-md-6">
                             <label for="cc-name" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre en la tarjeta</font></font></label>
-                            <input type="text" asp-for="NombreTarjeta" id="cc-name" class="form-control" />
+                            <input type="text" asp-for="NombreTarjeta" asp-controller="Productos" id="cc-name" class="form-control" />
 
-                            <small class="text-body-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre completo como se muestra en la tarjeta.</font></font></small>
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">
@@ -255,7 +215,7 @@
 
                         <div class="col-md-6">
                             <label for="cc-number" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Número de Tarjeta</font></font></label>
-                            <input type="text" asp-for="NumeroTarjeta" id="cc-number" class="form-control" />
+                            <input type="text" asp-for="NumeroTarjeta" asp-controller="Productos" id="cc-number" class="form-control" />
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">
@@ -267,7 +227,7 @@
 
                         <div class="col-md-6">
                             <label for="cc-expiration" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Vencimiento</font></font></label>
-                            <input type="text" asp-for="Vencimiento" id="cc-number" class="form-control" />
+                            <input type="text" asp-for="Vencimiento" asp-controller="Productos" id="cc-number" class="form-control" />
 
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
@@ -280,7 +240,7 @@
 
                         <div class="col-md-6">
                             <label for="cc-cvv" class="form-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CVV</font></font></label>
-                            <input type="text" asp-for="CVV" id="cc-number" class="form-control" />
+                            <input type="text" asp-for="CVV" asp-controller="Productos" id="cc-number" class="form-control" />
 
                             <div class="invalid-feedback">
                                 <font style="vertical-align: inherit;">
@@ -294,7 +254,13 @@
 
                     <hr class="my-4">
 
-                    <button type="submit" asp-controller="Productos" asp-action="CompraRealizada" class="w-100 btn btn-success btn-lg">Finalizar compra</button>
+
+                    <button type="submit" asp-controller="Productos" asp-action="CompraRealizada" class="w-100 btn btn-success btn-lg">Realizar compra</button>
+                    <br />
+                        <hr class="my-4">
+
+                    <button type="submit" asp-controller="Productos" asp-action="mostrarCompra" class="w-100 btn btn-success btn-lg">Ver historial de compras</button>
+
 
                 </form>
             </div>
